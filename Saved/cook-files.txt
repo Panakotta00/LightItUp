@@ -1,0 +1,26 @@
+FactoryGame:
+	PanaMod:
+		Lamps:
+			-Shared:
+				Material:
+					Glass
+					Lamp
+					Metall
+					Mirror
+				Texture:
+					Lamp1
+					Lamp2
+			Mesh:
+				Lamp1
+				Lamp2
+			BD_Lamp1
+			BD_Lamp2
+			BSC_Lamps
+			Hologram_Lamp1
+			Hologram_Lamp2
+			Lamp1
+			Lamp2
+			Recipe_Lamp1
+			Recipe_Lamp2
+			LampInteraction
+			LampBase
