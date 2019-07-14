@@ -9,6 +9,6 @@ public class FactoryGameEditorTarget : TargetRules
 	{
 		Type = TargetType.Editor;
 
-		ExtraModuleNames.AddRange( new string[] { "FactoryGame", "PanaMod" } );
+		ExtraModuleNames.AddRange( new string[] { "FactoryGame" } );
 	}
 }

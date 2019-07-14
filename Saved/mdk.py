@@ -73,21 +73,25 @@ def cook():
             s = ""
             for p in path:
                 s = s + p + "\\"
-            s = s + line
-            print("Copy '" + s + "'...")
-            try:
-                os.makedirs(config["projectRoot"] + "\\Saved\\Pak\\FactoryGame\\Content\\" + s[:s.rfind("\\")])
-            except:
-                print("Meep")
-            shutil.copyfile(config["projectRoot"] + "\\Saved\\Cooked\\WindowsNoEditor\\FactoryGame\\Content\\" + s + ".uasset", config["projectRoot"] + "\\Saved\\Pak\\FactoryGame\\Content\\" + s + ".uasset")
-            shutil.copyfile(config["projectRoot"] + "\\Saved\\Cooked\\WindowsNoEditor\\FactoryGame\\Content\\" + s + ".uexp", config["projectRoot"] + "\\Saved\\Pak\\FactoryGame\\Content\\" + s + ".uexp")
+            if line == "*":
+                print("Copy '" + s + "\\*'...")
+                shutil.copytree(config["projectRoot"] + "\\Saved\\Cooked\\WindowsNoEditor\\FactoryGame\\Content\\" + s, config["projectRoot"] + "\\Saved\\Pak\\FactoryGame\\Content\\" + s)
+            else:
+                s = s + line
+                try:
+                    os.makedirs(config["projectRoot"] + "\\Saved\\Pak\\FactoryGame\\Content\\" + s)
+                except:
+                    print("")
+                print("Copy '" + s + "'...")
+                shutil.copyfile(config["projectRoot"] + "\\Saved\\Cooked\\WindowsNoEditor\\FactoryGame\\Content\\" + s, config["projectRoot"] + "\\Saved\\Pak\\FactoryGame\\Content\\" + s)
+                shutil.copyfile(config["projectRoot"] + "\\Saved\\Cooked\\WindowsNoEditor\\FactoryGame\\Content\\" + s, config["projectRoot"] + "\\Saved\\Pak\\FactoryGame\\Content\\" + s)
 
 def pack():
     os.chdir(config["projectRoot"] + "\\Saved\\Pak")
     os.system("u4pak.py pack LightItUp.pak FactoryGame");
 
 def test():
-    shutil.copyfile(config["projectRoot"] + "\\Saved\\Pak\\LightItUp.pak", config["gameRoot"]+ "\\FactoryGame\\Content\\Paks\\LightItUp.pak")
+    shutil.copyfile(config["projectRoot"] + "\\Saved\\Pak\\LightItUp.pak", config["gameRoot"]+ "\\FactoryGame\\Content\\Paks\\LightItUp_p.pak")
 
 if cmd == "cook":
     cook()

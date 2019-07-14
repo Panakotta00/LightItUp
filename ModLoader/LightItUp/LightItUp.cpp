@@ -38,9 +38,19 @@ Mod::Info modInfo {
 class LightItUp : public Mod {
 	void beginPlay(Functions::ModReturns* modReturns, AFGPlayerController* playerIn) {
 		LOG("LightItUp adding recipes...");
-		SDK::UClass* add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/PanaMod/Lamps/Recipe_Lamp1.Recipe_Lamp1_C"));
+		SDK::UClass* add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/LightItUp/Lamps/StreetLamp/Recipe_StreetLamp.Recipe_StreetLamp_C"));
 		Functions::addRecipe(add);
-		add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/PanaMod/Lamps/Recipe_Lamp2.Recipe_Lamp2_C"));
+		add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/LightItUp/Lamps/LampPole/Recipe_LampPole.Recipe_LampPole_C"));
+		Functions::addRecipe(add);
+		add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/LightItUp/Lamps/PowerPoleLight/BR_PowerPoleLight.BR_PowerPoleLight_C"));
+		Functions::addRecipe(add);
+		//add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/LightItUp/Lamps/PoleLight/BR_PoleLight.BR_PoleLight_C"));
+		//Functions::addRecipe(add);
+		add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/LightItUp/Lamps/WallLight/BR_WallLight.BR_WallLight_C"));
+		Functions::addRecipe(add);
+		add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/LightItUp/Lamps/ConstructionLight/BR_ConstructionLight.BR_ConstructionLight_C"));
+		Functions::addRecipe(add);
+		add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/LightItUp/Lamps/PortableLight/BR_PortableLamp.BR_PortableLamp_C"));
 		Functions::addRecipe(add);
 		//add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/PanaMod/Power/Recipe_LightConnector.Recipe_LightConnector_C"));
 		//Functions::addRecipe(add);
