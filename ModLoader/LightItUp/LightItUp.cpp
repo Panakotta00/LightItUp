@@ -52,6 +52,8 @@ class LightItUp : public Mod {
 		Functions::addRecipe(add);
 		add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/LightItUp/Lamps/PortableLight/BR_PortableLamp.BR_PortableLamp_C"));
 		Functions::addRecipe(add);
+		add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/LightItUp/Lamps/SpiderLightPost/Recipe_SpiderLamp.Recipe_SpiderLamp_C"));
+		Functions::addRecipe(add);
 		//add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/PanaMod/Power/Recipe_LightConnector.Recipe_LightConnector_C"));
 		//Functions::addRecipe(add);
 		LOG("LightItUp Recipes added!");
