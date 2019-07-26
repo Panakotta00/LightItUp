@@ -83,8 +83,8 @@ def cook():
                 except:
                     print("")
                 print("Copy '" + s + "'...")
-                shutil.copyfile(config["projectRoot"] + "\\Saved\\Cooked\\WindowsNoEditor\\FactoryGame\\Content\\" + s, config["projectRoot"] + "\\Saved\\Pak\\FactoryGame\\Content\\" + s)
-                shutil.copyfile(config["projectRoot"] + "\\Saved\\Cooked\\WindowsNoEditor\\FactoryGame\\Content\\" + s, config["projectRoot"] + "\\Saved\\Pak\\FactoryGame\\Content\\" + s)
+                shutil.copyfile(config["projectRoot"] + "\\Saved\\Cooked\\WindowsNoEditor\\FactoryGame\\Content\\" + s + ".uasset", config["projectRoot"] + "\\Saved\\Pak\\FactoryGame\\Content\\" + s + ".uasset")
+                shutil.copyfile(config["projectRoot"] + "\\Saved\\Cooked\\WindowsNoEditor\\FactoryGame\\Content\\" + s + ".uexp", config["projectRoot"] + "\\Saved\\Pak\\FactoryGame\\Content\\" + s + ".uexp")
 
 def pack():
     os.chdir(config["projectRoot"] + "\\Saved\\Pak")

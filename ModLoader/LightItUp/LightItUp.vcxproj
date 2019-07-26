@@ -36,7 +36,7 @@
     <IncludePath>$(SolutionDir)SML\Detours\src;$(IncludePath)</IncludePath>
     <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;$(SolutionDir)x64\Release</LibraryPath>
-    <OutDir>$(SolutionDir)ModLoader\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <SourcePath>$(VC_SourcePath);</SourcePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -62,7 +62,7 @@
       <AdditionalDependencies>xinput1_3.lib;Detours.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)\ModLoader\$(Platform)\$(Configuration)\LightItUp.dll" "C:\Program Files\Epic Games\SatisfactoryEarlyAccess\FactoryGame\Binaries\Win64\mods\LightItUp.dll"</Command>
+      <Command>copy "$(SolutionDir)\$(Platform)\$(Configuration)\LightItUp.dll" "C:\Program Files\Epic Games\SatisfactoryEarlyAccess\FactoryGame\Binaries\Win64\mods\LightItUp.dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

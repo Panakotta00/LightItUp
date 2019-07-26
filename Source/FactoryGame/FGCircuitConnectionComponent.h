@@ -96,15 +96,13 @@ public:
 	 * Add a hidden connection to another connection component. One of the connections must be hidden for this to be valid.
 	 * Connects both ends of the connection and the circuits.
 	 */
-	UFUNCTION(BlueprintCallable, Category = "Connection")
-	void AddHiddenConnection(class UFGCircuitConnectionComponent* other);
+	void AddHiddenConnection( class UFGCircuitConnectionComponent* other );
 
 	/**
 	 * Remove a hidden connection to another connection component.
 	 * Disconnects both ends of the connection and the circuits.
 	 */
-	UFUNCTION(BlueprintCallable, Category = "Connection")
-	void RemoveHiddenConnection(class UFGCircuitConnectionComponent* other);
+	void RemoveHiddenConnection( class UFGCircuitConnectionComponent* other );
 
 	/** Clear all hidden connections. */
 	void ClearHiddenConnections();

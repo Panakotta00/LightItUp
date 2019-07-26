@@ -10,5 +10,5 @@ public class FactoryGameTarget : TargetRules
 		Type = TargetType.Game;
 
 		ExtraModuleNames.AddRange( new string[] { "FactoryGame" } );
-    }
+	}
 }
