@@ -1,4 +1,4 @@
-﻿Build started 25.07.2019 21:02:06.
+﻿Build started 02.08.2019 19:39:51.
      1>Project "C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\LightItUp\LightItUp.vcxproj" on node 2 (Build target(s)).
      1>Building with tools version "15.0".
        Target "EnableIntermediateOutputPathMismatchWarning" skipped, due to false condition; ('$(RestoreProjectStyle)' == 'PackageReference') was evaluated as ('' == 'PackageReference').
@@ -12,7 +12,7 @@
        Task "Message"
          Platform=x64
        Done executing task "Message".
-       Task "Error" skipped, due to false condition; ('$(OutDir)' != '' and !HasTrailingSlash('$(OutDir)')) was evaluated as ('C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\ModLoader\x64\Release\' != '' and !HasTrailingSlash('C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\ModLoader\x64\Release\')).
+       Task "Error" skipped, due to false condition; ('$(OutDir)' != '' and !HasTrailingSlash('$(OutDir)')) was evaluated as ('C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\x64\Release\' != '' and !HasTrailingSlash('C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\x64\Release\')).
        Task "Error" skipped, due to false condition; ('$(BaseIntermediateOutputPath)' != '' and !HasTrailingSlash('$(BaseIntermediateOutputPath)')) was evaluated as ('obj\' != '' and !HasTrailingSlash('obj\')).
        Task "Error" skipped, due to false condition; ('$(IntermediateOutputPath)' != '' and !HasTrailingSlash('$(IntermediateOutputPath)')) was evaluated as ('x64\Release\' != '' and !HasTrailingSlash('x64\Release\')).
        Task "Error" skipped, due to false condition; ( '$(_InitialMSBuildProjectExtensionsPath)' != '' And '$(MSBuildProjectExtensionsPath)' != '$(_InitialMSBuildProjectExtensionsPath)' ) was evaluated as ( 'C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\LightItUp\obj\' != '' And 'C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\LightItUp\obj\' != 'C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\LightItUp\obj\' ).
@@ -22,10 +22,10 @@
      1>Target "SetTelemetryEnvironmentVariables" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.DesignTime.targets" from project "C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\LightItUp\LightItUp.vcxproj" (target "Build" depends on it):
        Using "SetEnv" task from assembly "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll".
        Task "SetEnv"
-         VSTEL_SolutionSessionID={879B1E5C-6E38-4229-AF27-A14AF6054C1E}
+         VSTEL_SolutionSessionID={2DB1BF80-744D-4E52-A2A5-964B07C8444D}
        Done executing task "SetEnv".
        Task "SetEnv"
-         VSTEL_CurrentSolutionBuildID=570768937
+         VSTEL_CurrentSolutionBuildID=1257028750
        Done executing task "SetEnv".
        Task "SetEnv"
          VSTEL_ProjectID={D5E8167E-3386-4493-A78D-F427EDCBDFFA}
@@ -310,22 +310,34 @@
          	C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\FG_ENGINE_FUNCTIONS.OBJ
          	C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\FG_FACTORYGAME_FUNCTIONS.OBJ
          	C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\LIGHTITUP.OBJ
-         LightItUp.cpp will be compiled because C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\LightItUp\LightItUp.cpp was modified at 25.07.2019 20:56:53.
-         Outputs for C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\LIGHTITUP.CPP:
-         	C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\LIGHTITUP.OBJ
+         ..\SML\SatisfactorySDK\SDK\FG_Basic.cpp will be compiled because C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\SML\SatisfactorySDK\SDK\FG_Basic.cpp was modified at 02.08.2019 19:36:29.
+         ..\SML\SatisfactorySDK\SDK\FG_CoreUObject_functions.cpp will be compiled because C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\SML\SatisfactorySDK\SDK\FG_CoreUObject_functions.cpp was modified at 02.08.2019 19:36:29.
+         ..\SML\SatisfactorySDK\SDK\FG_Engine_functions.cpp will be compiled because C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\SML\SatisfactorySDK\SDK\FG_Engine_functions.cpp was modified at 02.08.2019 19:36:29.
+         ..\SML\SatisfactorySDK\SDK\FG_FactoryGame_functions.cpp will be compiled because C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\SML\SatisfactorySDK\SDK\FG_FactoryGame_functions.cpp was modified at 02.08.2019 19:36:29.
+         LightItUp.cpp will be compiled because C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\LightItUp\LightItUp.cpp was modified at 02.08.2019 19:37:38.
+         No output for C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\LIGHTITUP.CPP|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\SML\SATISFACTORYSDK\SDK\FG_BASIC.CPP|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\SML\SATISFACTORYSDK\SDK\FG_COREUOBJECT_FUNCTIONS.CPP|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\SML\SATISFACTORYSDK\SDK\FG_ENGINE_FUNCTIONS.CPP|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\SML\SATISFACTORYSDK\SDK\FG_FACTORYGAME_FUNCTIONS.CPP was found in the tracking log; source compilation required.
          Write Tracking Logs:
          	x64\Release\LightItUp.tlog\CL.write.1.tlog
          Environment Variables passed to tool:
-           VS_UNICODE_OUTPUT=236
-         C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\HostX86\x64\CL.exe /c /I"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\SML\Detours\src" /I"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\SML\SatisfactoryModLoader" /I"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\SML\SatisfactorySDK\SDK" /Zi /nologo /W3 /WX- /diagnostics:classic /sdl /Od /D NDEBUG /D BASEMOD_EXPORTS /D _WINDOWS /D _USRDLL /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /std:c++17 /Yu"stdafx.h" /Fp"x64\Release\LightItUp.pch" /Fo"x64\Release\\" /Fd"x64\Release\vc141.pdb" /Gd /TP /FC /errorReport:prompt LightItUp.cpp
+           VS_UNICODE_OUTPUT=1520
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\HostX86\x64\CL.exe /c /I"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\SML\Detours\src" /I"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\SML\SatisfactoryModLoader" /I"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\SML\SatisfactorySDK\SDK" /Zi /nologo /W3 /WX- /diagnostics:classic /sdl /Od /D NDEBUG /D BASEMOD_EXPORTS /D _WINDOWS /D _USRDLL /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /std:c++17 /Yu"stdafx.h" /Fp"x64\Release\LightItUp.pch" /Fo"x64\Release\\" /Fd"x64\Release\vc141.pdb" /Gd /TP /FC /errorReport:prompt ..\SML\SatisfactorySDK\SDK\FG_Basic.cpp ..\SML\SatisfactorySDK\SDK\FG_CoreUObject_functions.cpp ..\SML\SatisfactorySDK\SDK\FG_Engine_functions.cpp ..\SML\SatisfactorySDK\SDK\FG_FactoryGame_functions.cpp LightItUp.cpp
          Tracking command:
-         C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i "C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\LightItUp\x64\Release\LightItUp.tlog" /r "C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\LIGHTITUP.CPP" /b MSBuildConsole_CancelEventb80dd02b7cd54bd98287ca95e0b3b3bd  /c "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\HostX86\x64\CL.exe"  /c /I"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\SML\Detours\src" /I"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\SML\SatisfactoryModLoader" /I"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\SML\SatisfactorySDK\SDK" /Zi /nologo /W3 /WX- /diagnostics:classic /sdl /Od /D NDEBUG /D BASEMOD_EXPORTS /D _WINDOWS /D _USRDLL /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /std:c++17 /Yu"stdafx.h" /Fp"x64\Release\LightItUp.pch" /Fo"x64\Release\\" /Fd"x64\Release\vc141.pdb" /Gd /TP /FC /errorReport:prompt LightItUp.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i "C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\LightItUp\x64\Release\LightItUp.tlog" /r "C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\LIGHTITUP.CPP|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\SML\SATISFACTORYSDK\SDK\FG_BASIC.CPP|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\SML\SATISFACTORYSDK\SDK\FG_COREUOBJECT_FUNCTIONS.CPP|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\SML\SATISFACTORYSDK\SDK\FG_ENGINE_FUNCTIONS.CPP|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\SML\SATISFACTORYSDK\SDK\FG_FACTORYGAME_FUNCTIONS.CPP" /b MSBuildConsole_CancelEvent64cd33ecae17439eb3de598a0e0bd4d1  /c "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\HostX86\x64\CL.exe"  /c /I"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\SML\Detours\src" /I"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\SML\SatisfactoryModLoader" /I"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\SML\SatisfactorySDK\SDK" /Zi /nologo /W3 /WX- /diagnostics:classic /sdl /Od /D NDEBUG /D BASEMOD_EXPORTS /D _WINDOWS /D _USRDLL /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /std:c++17 /Yu"stdafx.h" /Fp"x64\Release\LightItUp.pch" /Fo"x64\Release\\" /Fd"x64\Release\vc141.pdb" /Gd /TP /FC /errorReport:prompt ..\SML\SatisfactorySDK\SDK\FG_Basic.cpp ..\SML\SatisfactorySDK\SDK\FG_CoreUObject_functions.cpp ..\SML\SatisfactorySDK\SDK\FG_Engine_functions.cpp ..\SML\SatisfactorySDK\SDK\FG_FactoryGame_functions.cpp LightItUp.cpp
+         FG_Basic.cpp
+     1>c:\users\yannic\documents\unreal projects\lightitup\modloader\sml\satisfactorysdk\sdk\fg_basic.cpp(19): warning C4161: #pragma pack(pop...): more pops than pushes
+         FG_CoreUObject_functions.cpp
+     1>c:\users\yannic\documents\unreal projects\lightitup\modloader\sml\satisfactorysdk\sdk\fg_coreuobject_functions.cpp(90): warning C4161: #pragma pack(pop...): more pops than pushes
+         FG_Engine_functions.cpp
+     1>c:\users\yannic\documents\unreal projects\lightitup\modloader\sml\satisfactorysdk\sdk\fg_engine_functions.cpp(65626): warning C4161: #pragma pack(pop...): more pops than pushes
+         FG_FactoryGame_functions.cpp
+     1>c:\users\yannic\documents\unreal projects\lightitup\modloader\sml\satisfactorysdk\sdk\fg_factorygame_functions.cpp(44640): warning C4161: #pragma pack(pop...): more pops than pushes
          LightItUp.cpp
      1>c:\users\yannic\documents\unreal projects\lightitup\modloader\sml\satisfactorymodloader\util\fkey.h(77): warning C4667: 'void SML::Objects::subscribe(std::function<const SML::Objects::FString *(SML::Mod::Functions::ModReturns *,C *)>)': no function template defined that matches forced instantiation
                  with
                  [
                      C=SML::Objects::FText
                  ]
+         Generating Code...
        Done executing task "CL".
        Task "CL" skipped, due to false condition; ('%(ClCompile.PrecompiledHeader)' != 'Create' and '%(ClCompile.ExcludedFromBuild)'!='true' and '%(ClCompile.CompilerIteration)' == '' and @(ClCompile) != '') was evaluated as ('Create' != 'Create' and ''!='true' and '' == '' and stdafx.cpp != '').
      1>Done building target "ClCompile" in project "LightItUp.vcxproj".
@@ -436,10 +448,10 @@
        Done executing task "MakeDir".
      1>Done building target "MakeDirsForLink" in project "LightItUp.vcxproj".
      1>Target "DoLinkOutputFilesMatch" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\LightItUp\LightItUp.vcxproj" (target "_Link" depends on it):
-       Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' == '') was evaluated as ('C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\ModLoader\x64\Release\LightItUp.dll' == '').
-       Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.FullPath)' != '$([System.IO.Path]::GetFullPath($(TargetPath)))') was evaluated as ('C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\ModLoader\x64\Release\LightItUp.dll' != '' and 'C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\ModLoader\x64\Release\LightItUp.dll' != 'C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\ModLoader\x64\Release\LightItUp.dll').
-       Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.Extension)' != '' and '%(_OutputFileFromLink.Extension)' != '$(TargetExt)') was evaluated as ('C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\ModLoader\x64\Release\LightItUp.dll' != '' and '.dll' != '' and '.dll' != '.dll').
-       Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.Filename)' != '' and '%(_OutputFileFromLink.Filename)' != '$(TargetName)') was evaluated as ('C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\ModLoader\x64\Release\LightItUp.dll' != '' and 'LightItUp' != '' and 'LightItUp' != 'LightItUp').
+       Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' == '') was evaluated as ('C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\x64\Release\LightItUp.dll' == '').
+       Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.FullPath)' != '$([System.IO.Path]::GetFullPath($(TargetPath)))') was evaluated as ('C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\x64\Release\LightItUp.dll' != '' and 'C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\x64\Release\LightItUp.dll' != 'C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\x64\Release\LightItUp.dll').
+       Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.Extension)' != '' and '%(_OutputFileFromLink.Extension)' != '$(TargetExt)') was evaluated as ('C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\x64\Release\LightItUp.dll' != '' and '.dll' != '' and '.dll' != '.dll').
+       Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.Filename)' != '' and '%(_OutputFileFromLink.Filename)' != '$(TargetName)') was evaluated as ('C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\x64\Release\LightItUp.dll' != '' and 'LightItUp' != '' and 'LightItUp' != 'LightItUp').
        Task "VCMessage" skipped, due to false condition; ('%(Link.MinimumRequiredVersion)' != '' and ('%(Link.Subsystem)' == '' or '%(Link.Subsystem)' == 'NotSet')) was evaluated as ('' != '' and ('Windows' == '' or 'Windows' == 'NotSet')).
      1>Done building target "DoLinkOutputFilesMatch" in project "LightItUp.vcxproj".
      1>Target "PreLinkEvent" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\LightItUp\LightItUp.vcxproj" (target "_Link" depends on it):
@@ -456,8 +468,8 @@
          Read Tracking Logs:
          	x64\Release\LightItUp.tlog\link.read.1.tlog
          Outputs for C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\FG_BASIC.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\FG_COREUOBJECT_FUNCTIONS.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\FG_ENGINE_FUNCTIONS.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\FG_FACTORYGAME_FUNCTIONS.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\LIGHTITUP.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\STDAFX.OBJ:
-         	C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\MODLOADER\X64\RELEASE\LIGHTITUP.DLL
-         	C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\MODLOADER\X64\RELEASE\LIGHTITUP.PDB
+         	C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\X64\RELEASE\LIGHTITUP.DLL
+         	C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\X64\RELEASE\LIGHTITUP.PDB
          Inputs for C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\FG_BASIC.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\FG_COREUOBJECT_FUNCTIONS.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\FG_ENGINE_FUNCTIONS.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\FG_FACTORYGAME_FUNCTIONS.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\LIGHTITUP.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\STDAFX.OBJ:
          	C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\X64\RELEASE\XINPUT1_3.LIB
          	C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\X64\RELEASE\DETOURS.LIB
@@ -489,26 +501,27 @@
          	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2017\COMMUNITY\VC\TOOLS\MSVC\14.16.27023\BIN\HOSTX86\X64\1033\LINKUI.DLL
          	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\BIN\10.0.17763.0\X86\RC.EXE
          	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2017\COMMUNITY\VC\TOOLS\MSVC\14.16.27023\BIN\HOSTX86\X86\CVTRES.EXE
-         Source compilation required: input C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\LIGHTITUP.OBJ is newer than output C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\MODLOADER\X64\RELEASE\LIGHTITUP.DLL.
+         	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2017\COMMUNITY\VC\TOOLS\MSVC\14.16.27023\BIN\HOSTX86\X86\MSPDBSRV.EXE
+         Source compilation required: input C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\FG_BASIC.OBJ is newer than output C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\X64\RELEASE\LIGHTITUP.DLL.
          Environment Variables passed to tool:
-           VS_UNICODE_OUTPUT=1116
-         C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\HostX86\x64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\ModLoader\x64\Release\LightItUp.dll" /INCREMENTAL:NO /NOLOGO xinput1_3.lib Detours.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\ModLoader\x64\Release\LightItUp.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\ModLoader\x64\Release\LightItUp.lib" /MACHINE:X64 /DLL x64\Release\FG_Basic.obj
+           VS_UNICODE_OUTPUT=1984
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\HostX86\x64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\x64\Release\LightItUp.dll" /INCREMENTAL:NO /NOLOGO xinput1_3.lib Detours.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\x64\Release\LightItUp.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\x64\Release\LightItUp.lib" /MACHINE:X64 /DLL x64\Release\FG_Basic.obj
          x64\Release\FG_CoreUObject_functions.obj
          x64\Release\FG_Engine_functions.obj
          x64\Release\FG_FactoryGame_functions.obj
          x64\Release\LightItUp.obj
          x64\Release\stdafx.obj
          Tracking command:
-         C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Tracker.exe /a /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i "C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\LightItUp\x64\Release\LightItUp.tlog" /r "C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\FG_BASIC.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\FG_COREUOBJECT_FUNCTIONS.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\FG_ENGINE_FUNCTIONS.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\FG_FACTORYGAME_FUNCTIONS.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\LIGHTITUP.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\STDAFX.OBJ" /b MSBuildConsole_CancelEvent6ae1480e3aa94556b199f7117fe3a1ee  /c "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\HostX86\x64\link.exe"  /ERRORREPORT:PROMPT /OUT:"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\ModLoader\x64\Release\LightItUp.dll" /INCREMENTAL:NO /NOLOGO xinput1_3.lib Detours.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\ModLoader\x64\Release\LightItUp.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\ModLoader\x64\Release\LightItUp.lib" /MACHINE:X64 /DLL x64\Release\FG_Basic.obj
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Tracker.exe /a /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i "C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\LightItUp\x64\Release\LightItUp.tlog" /r "C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\FG_BASIC.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\FG_COREUOBJECT_FUNCTIONS.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\FG_ENGINE_FUNCTIONS.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\FG_FACTORYGAME_FUNCTIONS.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\LIGHTITUP.OBJ|C:\USERS\YANNIC\DOCUMENTS\UNREAL PROJECTS\LIGHTITUP\MODLOADER\LIGHTITUP\X64\RELEASE\STDAFX.OBJ" /b MSBuildConsole_CancelEventdb2839bed1bc4c5d852d96855207c29a  /c "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\HostX86\x64\link.exe"  /ERRORREPORT:PROMPT /OUT:"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\x64\Release\LightItUp.dll" /INCREMENTAL:NO /NOLOGO xinput1_3.lib Detours.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\x64\Release\LightItUp.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\x64\Release\LightItUp.lib" /MACHINE:X64 /DLL x64\Release\FG_Basic.obj
          x64\Release\FG_CoreUObject_functions.obj
          x64\Release\FG_Engine_functions.obj
          x64\Release\FG_FactoryGame_functions.obj
          x64\Release\LightItUp.obj
          x64\Release\stdafx.obj
-            Creating library C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\ModLoader\x64\Release\LightItUp.lib and object C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\ModLoader\x64\Release\LightItUp.exp
+            Creating library C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\x64\Release\LightItUp.lib and object C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\x64\Release\LightItUp.exp
        Done executing task "Link".
        Task "Message"
-         LightItUp.vcxproj -> C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\ModLoader\x64\Release\LightItUp.dll
+         LightItUp.vcxproj -> C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\x64\Release\LightItUp.dll
        Done executing task "Message".
        Task "VCMessage" skipped, due to false condition; (('$(EmbedManifestBy)' != 'LINK' or '$(LegacyManifestEmbedding)' != 'true' or '$(LinkSkippedExecution)' == 'true') and
                     %(Link.GenerateDebugInformation) == 'DebugFastLink' and %(Link.ProgramDataBaseFileName) != '') was evaluated as (('MT' != 'LINK' or '' != 'true' or 'False' == 'true') and
@@ -617,10 +630,10 @@
      1>Done building target "PrepareForRun" in project "LightItUp.vcxproj".
        Target "CustomBuildStep" skipped, due to false condition; ('@(CustomBuildStep)' != '' and '$(SelectedFiles)'=='') was evaluated as ('' != '' and ''=='').
      1>Target "PostBuildEvent" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\LightItUp\LightItUp.vcxproj" (target "_BuildLinkAction" depends on it):
-       Task "Message" skipped, due to false condition; ('%(PostBuildEvent.Message)' != '' and '%(PostBuildEvent.Command)' != '') was evaluated as ('' != '' and 'copy "C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\\ModLoader\x64\Release\LightItUp.dll" "C:\Program Files\Epic Games\SatisfactoryEarlyAccess\FactoryGame\Binaries\Win64\mods\LightItUp.dll"' != '').
+       Task "Message" skipped, due to false condition; ('%(PostBuildEvent.Message)' != '' and '%(PostBuildEvent.Command)' != '') was evaluated as ('' != '' and 'copy "C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\\x64\Release\LightItUp.dll" "C:\Program Files\Epic Games\SatisfactoryEarlyAccess\FactoryGame\Binaries\Win64\mods\LightItUp.dll"' != '').
        Using "Exec" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
        Task "Exec"
-         copy "C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\\ModLoader\x64\Release\LightItUp.dll" "C:\Program Files\Epic Games\SatisfactoryEarlyAccess\FactoryGame\Binaries\Win64\mods\LightItUp.dll"
+         copy "C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\\x64\Release\LightItUp.dll" "C:\Program Files\Epic Games\SatisfactoryEarlyAccess\FactoryGame\Binaries\Win64\mods\LightItUp.dll"
          :VCEnd
                  1 Datei(en) kopiert.
        Done executing task "Exec".
@@ -660,9 +673,13 @@ Build succeeded.
 
        "C:\Users\Yannic\Documents\Unreal Projects\LightItUp\ModLoader\LightItUp\LightItUp.vcxproj" (Build target) (1) ->
        (ClCompile target) -> 
+         c:\users\yannic\documents\unreal projects\lightitup\modloader\sml\satisfactorysdk\sdk\fg_basic.cpp(19): warning C4161: #pragma pack(pop...): more pops than pushes
+         c:\users\yannic\documents\unreal projects\lightitup\modloader\sml\satisfactorysdk\sdk\fg_coreuobject_functions.cpp(90): warning C4161: #pragma pack(pop...): more pops than pushes
+         c:\users\yannic\documents\unreal projects\lightitup\modloader\sml\satisfactorysdk\sdk\fg_engine_functions.cpp(65626): warning C4161: #pragma pack(pop...): more pops than pushes
+         c:\users\yannic\documents\unreal projects\lightitup\modloader\sml\satisfactorysdk\sdk\fg_factorygame_functions.cpp(44640): warning C4161: #pragma pack(pop...): more pops than pushes
          c:\users\yannic\documents\unreal projects\lightitup\modloader\sml\satisfactorymodloader\util\fkey.h(77): warning C4667: 'void SML::Objects::subscribe(std::function<const SML::Objects::FString *(SML::Mod::Functions::ModReturns *,C *)>)': no function template defined that matches forced instantiation
 
-    3 Warning(s)
+    7 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:06.03
+Time Elapsed 00:00:14.58

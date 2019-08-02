@@ -17,7 +17,7 @@
 using namespace SML::Mod;
 using namespace SML::Objects;
 
-#define SML_VERSION "1.0.0-pr5"
+#define SML_VERSION "1.0.0-pr6"
 #define MOD_NAME "LightItUp"
 
 #define LOG(msg) SML::Utility::infoMod(MOD_NAME, msg)
@@ -31,7 +31,7 @@ Mod::Info modInfo {
 	MOD_NAME,
 	"0.1",
 	"A Satisfactory mod which adds a couple of Lamps.",
-	"Panakotta00, CoderDE, MassiveBytes",
+	"Panakotta00, PortalGamesMais, Trxnce, RosszEmber, CoderDE, MassiveBytes",
 	{}
 };
 
@@ -52,8 +52,8 @@ class LightItUp : public Mod {
 		Functions::addRecipe(add);
 		add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/LightItUp/Lamps/PortableLight/BR_PortableLamp.BR_PortableLamp_C"));
 		Functions::addRecipe(add);
-		add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/LightItUp/Lamps/SpiderLightPost/Recipe_SpiderLamp.Recipe_SpiderLamp_C"));
-		Functions::addRecipe(add);
+		//add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/LightItUp/Lamps/SpiderLightPost/Recipe_SpiderLamp.Recipe_SpiderLamp_C"));
+		//Functions::addRecipe(add);
 		//add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/PanaMod/Power/Recipe_LightConnector.Recipe_LightConnector_C"));
 		//Functions::addRecipe(add);
 		LOG("LightItUp Recipes added!");
