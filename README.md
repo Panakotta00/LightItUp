@@ -24,8 +24,5 @@ lamps which are fuel powered can be turned off via the "Active"-Switch int the b
 ## Lampgroups
 Some lamps support lampgroups. Lampgroups are intended for sharing Lampconfigurations between multiple Lamps. So you can group one street and turn it on, off by one click, without the needance to set each lamp individually. You can create and remove custom groups.
 
-## Galery
+## Gallery
 https://imgur.com/a/4eqNSkz
-
-## Donation
-- Panakotta00: https://www.tipeeestream.com/coderde/donation
