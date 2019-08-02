@@ -1,6 +1,11 @@
 # LightItUp
 "Light It Up" is a Satisfactory Mod which adds a couple of Lamps to the game.
 
+## Contributors
+- PortalGamesMais
+- Trxnce
+- RosszEmber
+
 ## Lamptypes
 - Lamp Pole: A High lamp to light up big areas, consumes power
 - Street Lamp: A lamp to light up roads and paths, consumes power
