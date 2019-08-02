@@ -26,6 +26,3 @@ Some lamps support lampgroups. Lampgroups are intended for sharing Lampconfigura
 
 ## Gallery
 https://imgur.com/a/4eqNSkz
-
-## Donation
-- Panakotta00: https://www.tipeeestream.com/coderde/donation
