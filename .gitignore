@@ -86,8 +86,9 @@ DerivedDataCache/*
 FactoryGame_WwiseProject/*
 Plugins/Wwise/*
 
-# Compiled ModLoaderStuff
-ModLoader/x64
-
 # ModLoader-Solution
 !ModLoader/*.sln
+
+# ModLoader-Binaries
+ModLoader/x64
+ModLoader/LightItUp/x64
