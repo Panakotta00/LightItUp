@@ -1,6 +1,11 @@
 # LightItUp
 "Light It Up" is a Satisfactory Mod which adds a couple of Lamps to the game.
 
+## Contributors
+- PortalGamesMais
+- Trxnce
+- RosszEmber
+
 ## Lamptypes
 - Lamp Pole: A High lamp to light up big areas, consumes power
 - Street Lamp: A lamp to light up roads and paths, consumes power
@@ -17,7 +22,10 @@ Some lamps have the lampmode functionallity which allowes to use following confi
 lamps which are fuel powered can be turned off via the "Active"-Switch int the bottom right corner of ther GUI
 
 ## Lampgroups
-Some lamps support lampgroups. Lampgroups are intended for sharing Lampconfigurations between multiple Lamps. So you can group one street and turn it on, off by one click, without the needance to set each lamp individually. You can create and remove custom lamps.
+Some lamps support lampgroups. Lampgroups are intended for sharing Lampconfigurations between multiple Lamps. So you can group one street and turn it on, off by one click, without the needance to set each lamp individually. You can create and remove custom groups.
+
+## Galery
+https://imgur.com/a/4eqNSkz
 
 ## Donation
 - Panakotta00: https://www.tipeeestream.com/coderde/donation
