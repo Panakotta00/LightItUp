@@ -31,7 +31,7 @@ Mod::Info modInfo {
 	MOD_NAME,
 	"0.1",
 	"A Satisfactory mod which adds a couple of Lamps.",
-	"Panakotta00, PortalGamesMais, Trxnce, RosszEmber, CoderDE, MassiveBytes",
+	"Panakotta00, PortalGamesMais, Trxnce, RosszEmber",
 	{}
 };
 
