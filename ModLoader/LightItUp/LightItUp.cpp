@@ -17,7 +17,7 @@
 using namespace SML::Mod;
 using namespace SML::Objects;
 
-#define SML_VERSION "1.0.0-pr6"
+#define SML_VERSION "1.0.0-pr7"
 #define MOD_NAME "LightItUp"
 
 #define LOG(msg) SML::Utility::infoMod(MOD_NAME, msg)
