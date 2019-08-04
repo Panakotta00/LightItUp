@@ -1,5 +1,26 @@
 FactoryGame:
 	LightItUp:
-		*
+		Lamps:
+			BSC_Lamps
+			CSSUIHelper
+			FueldLampBase
+			LampBase
+			LampController
+			LampInteraction
+			LampMode
+			Widget_CreateGroup
+			Widget_FueldLamp
+			ConstructionLight:
+				*
+			LampPole:
+				*
+			PortableLight:
+				*
+			PowerPoleLight:
+				*
+			-Shared:
+				*
+			StreetLamp:
+				*
 	PanaMod:
 		*
