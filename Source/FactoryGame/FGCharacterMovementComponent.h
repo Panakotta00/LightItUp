@@ -36,6 +36,7 @@ public:
 	virtual void SetDefaultMovementMode() override;
 	// End UCharacterMovementComponent
 
+
 	UFUNCTION( Reliable, Server, WithValidation )
 	void ServerSetHookLocation( const FVector& hookLocation );
 
@@ -176,6 +177,14 @@ private:
 	/** The ladder we're climbing; null if not climbing. */
 	UPROPERTY()
 	UFGLadderComponent* mOnLadder;
+
+
+	//Cheat
+	public:
+	bool mCheatIsPressingJump;
+	bool mCheatIsPressingCrouch;
+	float CheatFlySpeedVertical;
+	//end Cheat
 };
 
 class FSavedMove_FGMovement : public FSavedMove_Character

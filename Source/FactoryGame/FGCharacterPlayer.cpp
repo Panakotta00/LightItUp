@@ -92,6 +92,13 @@ void AFGCharacterPlayer::SetWantSprintBobbing( bool wantBobbing){ }
 FVector AFGCharacterPlayer::GetInventoryDropLocation_Implementation( const  UFGInventoryComponent* component, FInventoryStack stack){ return FVector(); }
 void AFGCharacterPlayer::AddRadiationImmunity( float toAdd){ }
 void AFGCharacterPlayer::SetRadiationImmunity( float newImmunity){ }
+void AFGCharacterPlayer::ClientCheatFly_Implementation(){ }
+void AFGCharacterPlayer::CheatJump(){ }
+void AFGCharacterPlayer::StopCheatJump(){ }
+void AFGCharacterPlayer::CheatCrouch(){ }
+void AFGCharacterPlayer::StopCheatCrouch(){ }
+void AFGCharacterPlayer::CheatToggleGhostFly(){ }
+void AFGCharacterPlayer::CheatTeleport(){ }
 void AFGCharacterPlayer::SetupPlayerInputComponent(  UInputComponent* InputComponent){ }
 void AFGCharacterPlayer::OnInventorySlotsUnlocked( int32 newUnlockedSlots){ }
 void AFGCharacterPlayer::OnArmsSlotsUnlocked( int32 newUnlockedSlots){ }
@@ -154,3 +161,7 @@ void AFGCharacterPlayer::OnRep_DrivenVehicle(){ }
 void AFGCharacterPlayer::OnRep_PickupCounter(){ }
 void AFGCharacterPlayer::OnRep_InRadioactiveZone(){ }
 void AFGCharacterPlayer::OnRep_RadiationIntensity(){ }
+FOnPersistentEquipmentSpawned AFGCharacterPlayer::OnPersistentEquipmentSpawned = FOnPersistentEquipmentSpawned();
+FOnEquipmentEquipped AFGCharacterPlayer::OnEquipmentEquipped = FOnEquipmentEquipped();
+FOnEquipmentUnequipped AFGCharacterPlayer::OnEquipmentUnequipped = FOnEquipmentUnequipped();
+FOnFoliagePickupSpawned AFGCharacterPlayer::OnFoliagePickupSpawned = FOnFoliagePickupSpawned();

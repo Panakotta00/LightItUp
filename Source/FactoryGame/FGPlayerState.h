@@ -11,6 +11,8 @@
 #include "GameFramework/PlayerState.h"
 #include "FGCharacterPlayer.h"
 #include "UI/Message/FGMessageBase.h"
+#include "FGActorRepresentation.h"
+#include "UI/Message/FGMessageBase.h"
 #include "FGPlayerState.generated.h"
 
 typedef TSharedPtr<class IHttpRequest> FHttpRequestPtr;
@@ -203,6 +205,51 @@ public:
 	/** Adds more arm slots ( can also be a negative number to decrease number of slots ) */
 	UFUNCTION( BlueprintCallable, Category = "Equipment" )
 	void AddArmSlots( int32 slotsToAdd );
+
+	/** Get if we only should show affordable recipes in manufacturing widgets */
+	UFUNCTION( BlueprintPure, Category = "Recipes" )
+	FORCEINLINE bool GetOnlyShowAffordableRecipes() { return mOnlyShowAffordableRecipes; }
+
+	/** Set if we only should show affordable recipes in manufacturing widgets */
+	UFUNCTION( BlueprintCallable, Category = "Recipes" )
+	void SetOnlyShowAffordableRecipes( bool enabled );
+
+	/** Let server set if we only should show affordable recipes in manufacturing widgets */
+	UFUNCTION( Server, Reliable, WithValidation, Category = "Recipes" )
+	void Server_SetOnlyShowAffordableRecipes( bool enabled );
+
+	/** Get the item categories that the user have collapsed in manufacturing widgets  */
+	UFUNCTION( BlueprintPure, Category = "ItemCategory" )
+	FORCEINLINE TArray< TSubclassOf< class UFGItemCategory > > GetCollapsedItemCategories() { return mCollapsedItemCategories; }
+
+	/** Set if an item category is collapsed in manufacturing widgets  */
+	UFUNCTION( BlueprintCallable, Category = "ItemCategory" )
+	void SetItemCategoryCollapsed( TSubclassOf< class UFGItemCategory > itemCategory, bool collapsed );
+
+	/** Let server set if an item category is collapsed in manufacturing widgets  */
+	UFUNCTION( Server, Reliable, WithValidation, Category = "ItemCategory" )
+	void Server_SetItemCategoryCollapsed( TSubclassOf< class UFGItemCategory > itemCategory, bool collapsed );
+	
+	/** Gets the filter for map representations */
+	FORCEINLINE TArray< ERepresentationType > GetFilteredOutMapTypes() { return mFilteredOutMapTypes; }
+
+	/** Gets the filter for compass representations */
+	FORCEINLINE TArray< ERepresentationType > GetFilteredOutCompassTypes() { return mFilteredOutCompassTypes; }
+
+	/** Sets the map filter visibility for the given representation */
+	void SetMapFilter( ERepresentationType representationType, bool visible );
+
+	/** Let server set the map filter visibility for the given representation */
+	UFUNCTION( Server, Reliable, WithValidation, Category = "Representation" )
+	void Server_SetMapFilter( ERepresentationType representationType, bool visible );
+
+	/** Sets the compass filter visibility for the given representation */
+	void SetCompassFilter( ERepresentationType representationType, bool visible );
+	
+	/** Let server set the compass filter visibility for the given representation */
+	UFUNCTION( Server, Reliable, WithValidation, Category = "Representation" )
+	void Server_SetCompassFilter( ERepresentationType representationType, bool visible );
+
 protected:
 	// Client get notified that the hotbar has changed
 	UFUNCTION()
@@ -266,4 +313,19 @@ private:
 	/** Total number of arm equipment slots for this player */
 	UPROPERTY( SaveGame, Replicated )
 	int32 mNumArmSlots;
+
+	/** True if we only should show affordable recipes in manufacturing widgets  */
+	UPROPERTY( SaveGame, Replicated )
+	bool mOnlyShowAffordableRecipes;
+
+	/** The item categories that the user have collapsed in manufacturing widgets  */
+	UPROPERTY( SaveGame, Replicated )
+	TArray< TSubclassOf< class UFGItemCategory > > mCollapsedItemCategories;
+	
+	UPROPERTY( SaveGame, Replicated )
+	TArray< ERepresentationType > mFilteredOutMapTypes;
+	
+	UPROPERTY( SaveGame, Replicated )
+	TArray< ERepresentationType > mFilteredOutCompassTypes;
+
 };

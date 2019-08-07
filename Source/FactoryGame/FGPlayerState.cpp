@@ -33,4 +33,16 @@ void AFGPlayerState::RemoveRecipe( TSubclassOf< UFGRecipe > recipe){ }
 void AFGPlayerState::Server_RemoveRecipe_Implementation( TSubclassOf< UFGRecipe > recipe){ }
 bool AFGPlayerState::Server_RemoveRecipe_Validate( TSubclassOf< UFGRecipe > recipe){ return bool(); }
 void AFGPlayerState::AddArmSlots( int32 slotsToAdd){ }
+void AFGPlayerState::SetOnlyShowAffordableRecipes( bool enabled){ }
+void AFGPlayerState::Server_SetOnlyShowAffordableRecipes_Implementation( bool enabled){ }
+bool AFGPlayerState::Server_SetOnlyShowAffordableRecipes_Validate( bool enabled){ return bool(); }
+void AFGPlayerState::SetItemCategoryCollapsed( TSubclassOf<  UFGItemCategory > itemCategory, bool collapsed){ }
+void AFGPlayerState::Server_SetItemCategoryCollapsed_Implementation( TSubclassOf<  UFGItemCategory > itemCategory, bool collapsed){ }
+bool AFGPlayerState::Server_SetItemCategoryCollapsed_Validate( TSubclassOf<  UFGItemCategory > itemCategory, bool collapsed){ return bool(); }
+void AFGPlayerState::SetMapFilter( ERepresentationType representationType, bool visible){ }
+void AFGPlayerState::Server_SetMapFilter_Implementation( ERepresentationType representationType, bool visible){ }
+bool AFGPlayerState::Server_SetMapFilter_Validate( ERepresentationType representationType, bool visible){ return bool(); }
+void AFGPlayerState::SetCompassFilter( ERepresentationType representationType, bool visible){ }
+void AFGPlayerState::Server_SetCompassFilter_Implementation( ERepresentationType representationType, bool visible){ }
+bool AFGPlayerState::Server_SetCompassFilter_Validate( ERepresentationType representationType, bool visible){ return bool(); }
 void AFGPlayerState::OnRep_HotbarShortcuts(){ }

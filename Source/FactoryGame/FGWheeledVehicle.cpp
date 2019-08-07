@@ -67,3 +67,4 @@ void AFGWheeledVehicle::ApplyRollStabilisation( float deltaTime){ }
 void AFGWheeledVehicle::ApplyAssistedVelocities( float deltaTime){ }
 void AFGWheeledVehicle::OnRep_IsSimulated(){ }
 void AFGWheeledVehicle::OnRep_TransferStatusChanged(){ }
+FName AFGWheeledVehicle::VehicleMovementComponentName = FName();

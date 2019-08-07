@@ -121,9 +121,9 @@ private:
 	UPROPERTY()
 	TArray< class AFGBuildableFactory* > mPreviousSignificantFactories;
 
-	/** List of conveyor belts that were significant last time we checked */
+	/** List of conveyor bases (belts and lifts) that were significant last time we checked */
 	UPROPERTY()
-	TArray< class AFGBuildableConveyorBelt* > mPreviousSignificantConveyorBelts;
+	TArray< class AFGBuildableConveyorBase* > mPreviousSignificantConveyorBases;
 
 	/** How often we should sort the factories/conveyors */
 	float mSortTimerTime;

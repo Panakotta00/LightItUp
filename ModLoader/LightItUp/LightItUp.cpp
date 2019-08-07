@@ -29,7 +29,7 @@ json config = SML::Utility::JsonConfig::load(MOD_NAME, {
 Mod::Info modInfo {
 	SML_VERSION,
 	MOD_NAME,
-	"0.1",
+	"0.2.1",
 	"A Satisfactory mod which adds a couple of Lamps.",
 	"Panakotta00, PortalGamesMais, Trxnce, RosszEmber",
 	{}

@@ -2,5 +2,7 @@
 
 #include "FactoryGameModule.h"
 
+IMPLEMENT_PRIMARY_GAME_MODULE(FFactoryGameModule, FactoryGameModule, "FactoryGameModule");
+
 void FFactoryGameModule::StartupModule(){ }
 void FFactoryGameModule::ShutdownModule(){ }

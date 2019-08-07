@@ -415,6 +415,18 @@ public:
 	/** Sets an amount of radiation */
 	UFUNCTION( BlueprintCallable, Category = "Radiation" )
 	void SetRadiationImmunity( float newImmunity );
+
+
+	//Cheats
+	virtual void ClientCheatFly_Implementation() override;
+	virtual void CheatJump();
+	virtual void StopCheatJump();
+	virtual void CheatCrouch();
+	virtual void StopCheatCrouch();
+	virtual void CheatToggleGhostFly();
+	virtual void CheatTeleport();
+	//End cheats
+
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent( class UInputComponent* InputComponent ) override;
@@ -914,4 +926,5 @@ private:
 	/** Are we in a radioactive zone */
 	UPROPERTY( ReplicatedUsing=OnRep_InRadioActiveZone )
 	bool mInRadioactiveZone;
+
 };

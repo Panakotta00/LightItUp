@@ -21,5 +21,6 @@ void UFGCompassWidget::RemoveFromCompassPanel(  UFGCompassObjectWidget* compassO
 void UFGCompassWidget::OnActorRepresentationAdded(  UFGActorRepresentation* actorRepresentation){ }
 void UFGCompassWidget::OnActorRepresentationRemoved(  UFGActorRepresentation* actorRepresentation){ }
 void UFGCompassWidget::OnActorRepresentationUpdated(  UFGActorRepresentation* actorRepresentation){ }
+void UFGCompassWidget::OnActorRepresentationFiltered( ERepresentationType type, bool visible){ }
 void UFGCompassWidget::CalculateCenteredResourceObjects(){ }
 void UFGCompassWidget::CalculateCenteredObject(){ }
