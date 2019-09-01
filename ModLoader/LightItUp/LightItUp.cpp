@@ -46,6 +46,8 @@ class LightItUp : public Mod {
 		Functions::addRecipe(add);
 		add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/LightItUp/Lamps/CeilingLamp/Recipe_CeilingLamp.Recipe_CeilingLamp_C"));
 		Functions::addRecipe(add);
+		add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/LightItUp/Lamps/WallLamp/Recipe_WallLamp.Recipe_WallLamp_C"));
+		Functions::addRecipe(add);
 		//add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/LightItUp/Lamps/PoleLight/BR_PoleLight.BR_PoleLight_C"));
 		//Functions::addRecipe(add);
 		//add = static_cast<SDK::UClass*>(Functions::loadObjectFromPak(SDK::UClass::StaticClass(), L"/Game/FactoryGame/LightItUp/Lamps/WallLight/BR_WallLight.BR_WallLight_C"));
