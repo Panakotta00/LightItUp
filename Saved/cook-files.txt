@@ -22,6 +22,8 @@ FactoryGame:
 				*
 			StreetLamp:
 				*
+			CeilingLamp:
+				*
 		Power:
 			*
 	PanaMod:
