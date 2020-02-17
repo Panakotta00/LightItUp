@@ -27,3 +27,14 @@ Some lamps support lampgroups. Lampgroups are intended for sharing Lampconfigura
 
 ## Gallery
 https://imgur.com/a/4eqNSkz
+
+## Build your self
+
+If you want to build the mod your self, you need to go through some setup processes.
+1. build the Satisfactory Mod Loader from source (don't forget the custom engine)
+2. add in /Source directory symbolic links to the folders "FactoryGame" and "SML" in the Satisfactory Mod Loader Source
+3. switch the unreal engine version from the .uproject to the custom engine
+4. open the generated .snl in Visual Studio and build the LightItUp project for "shipping" and "development editor"
+5. double click the .uproject to open it with the unreal editor
+6. open Alpakit and hit "Alpakit!"
+7. You can find the .dll in /Binaries/Win64 and the .pak in /Mods
