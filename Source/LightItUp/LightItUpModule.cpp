@@ -1,5 +1,4 @@
-#include "ExampleModModule.h"
-#include "ExampleActor.h"
+#include "LightItUpModule.h"
 #include "../SML/mod/hooking.h"
 #include "FGGameMode.h"
 #include <fstream>

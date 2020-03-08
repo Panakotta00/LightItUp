@@ -74,6 +74,7 @@ Plugins/Wwise/*
 Mods/*
 *.pak
 
-# Satisfactory Mod Loader + Game Headers
+# Satisfactory Mod Loader + Game Headers + Alpakit
 Source/SML
-SOurce/FactoryGame
+Source/FactoryGame
+Source/Alpakit
