@@ -43,8 +43,6 @@ void ALampBase::BeginPlay() {
 	Super::BeginPlay();
 
 	lampSubSys = ALampSubsystem::Get(this);
-	
-	AFGTimeOfDaySubsystem::Get(this)->SetDaySeconds(0);
 }
 
 void ALampBase::TickActor(float DeltaTime, ELevelTick TickType, FActorTickFunction & ThisTickFunction) {

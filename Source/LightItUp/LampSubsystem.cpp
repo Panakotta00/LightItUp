@@ -23,6 +23,8 @@ ALampSubsystem * ALampSubsystem::Get(UObject * worldContext) {
 }
 
 bool ALampSubsystem::setGroup(FString group, ELampMode mode, bool create) {
+	group = group.TrimStartAndEnd();
+	if (group.Len() < 1) return false;
 	if (auto g = groups.Find(group)) {
 		*g = mode;
 		return true;
