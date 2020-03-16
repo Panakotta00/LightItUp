@@ -9,6 +9,27 @@
 
 #define DefaultLampGroup TEXT("Default")
 
+class ALampBase;
+
+UCLASS()
+class LIGHTITUP_API ULampBaseRCO : public UFGRemoteCallObject {
+	GENERATED_BODY()
+
+private:
+	UPROPERTY(Replicated)
+		bool bTest;
+
+public:
+	UFUNCTION(Server, WithValidation, Reliable)
+		void SetGroup(ALampBase* lamp, const FString& group);
+
+	UFUNCTION(Server, WithValidation, Reliable)
+		void SetMode(ALampBase* lamp, ELampMode mode);
+
+	UFUNCTION(Server, WithValidation, Reliable)
+		void SetUseGroup(ALampBase* lamp, bool useGroup);
+};
+
 /**
  * The Base Class for normal lamp buildings consuming power
  */
@@ -32,13 +53,13 @@ public:
 	UPROPERTY()
 		UFGPowerInfoComponent* mPowerInfo = nullptr;
 
-	UPROPERTY(BlueprintReadWrite, SaveGame, Category = "Light")
+	UPROPERTY(BlueprintReadWrite, Replicated, SaveGame, Category = "Light")
 		TEnumAsByte<ELampMode> mMode = OFF;
 
-	UPROPERTY(BlueprintReadWrite, SaveGame, Category = "Light")
+	UPROPERTY(BlueprintReadWrite, Replicated, SaveGame, Category = "Light")
 		FString mGroup = DefaultLampGroup;
 
-	UPROPERTY(BlueprintReadWrite, SaveGame, Category = "Light")
+	UPROPERTY(BlueprintReadWrite, Replicated, SaveGame, Category = "Light")
 		bool mUseGroup = false;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Light")
@@ -48,9 +69,13 @@ public:
 		float mEmessiveStrength = 1.0;
 
 	UPROPERTY(BlueprintReadOnly, Replicated, Category = "Light")
-		bool mLampOn = false;
+		bool bLampOn = false;
 
 	ALampBase();
+
+	// Begin UObject
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+	// End UObject
 
 	// Begin Actor Interface
 	virtual void BeginPlay() override;
@@ -64,4 +89,13 @@ public:
 	// Begin IFGSaveInterface
 	bool ShouldSave_Implementation() const override;
 	// End IFGSaveInterface
+
+	UFUNCTION(BlueprintCallable, Category = "Lamps")
+		void SetGroup(const FString& group);
+
+	UFUNCTION(BlueprintCallable, Category = "Lamps")
+		void SetMode(TEnumAsByte<ELampMode> mode);
+
+	UFUNCTION(BlueprintCallable, Category = "Lamps")
+		void SetUseGroup(bool useGroup);
 };

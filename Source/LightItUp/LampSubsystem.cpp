@@ -2,60 +2,108 @@
 #include "Engine/World.h"
 #include "Kismet/GameplayStatics.h"
 #include "util/Logging.h"
+#include "FGPlayerController.h"
+#include "FGGameMode.h"
+#include "UnrealNetwork.h"
+
+ULampSubsystemRCO::ULampSubsystemRCO() {
+	
+}
+
+void ULampSubsystemRCO::SetGroup_Implementation(ALampSubsystem* subsys, const FString& group, ELampMode mode, bool create) {
+	if (group.Len() < 1) return;
+	if (auto g = subsys->Groups.FindByKey(group)) {
+		g->Mode = mode;
+		subsys->ForceNetUpdate();
+		subsys->OnGroupsChanged();
+	} else if (create) {
+		subsys->Groups.Add({group, mode});
+		subsys->ForceNetUpdate();
+		subsys->OnGroupsChanged();
+	}
+}
+
+bool ULampSubsystemRCO::SetGroup_Validate(ALampSubsystem* subsys, const FString& group, ELampMode mode, bool create) {
+	return true;
+}
+
+void ULampSubsystemRCO::RemoveGroup_Implementation(ALampSubsystem* subsys, const FString& groupName) {
+	auto group = subsys->Groups.FindByKey(groupName);
+	subsys->Groups.Remove(*group);
+	subsys->ForceNetUpdate();
+	subsys->OnGroupsChanged();
+}
+
+bool ULampSubsystemRCO::RemoveGroup_Validate(ALampSubsystem* subsys, const FString& group) {
+	return true;
+}
+
+void ULampSubsystemRCO::GetLifetimeReplicatedProps(TArray< FLifetimeProperty >& OutLifetimeProps) const {
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(ULampSubsystemRCO, Test);
+}
+
 
 bool ALampSubsystem::ShouldSave_Implementation() const {
 	return true;
 }
 
-ALampSubsystem::ALampSubsystem() {
-	if (!groups.Contains(DefaultLampGroup)) groups.Add(DefaultLampGroup, AUTO);
+void ALampSubsystem::BeginPlay() {
+	Super::BeginPlay();
 }
 
-ALampSubsystem * ALampSubsystem::Get(UWorld * world) {
+void ALampSubsystem::OnGroupsChanged() {
+	bool hard = Groups.Num() != LastGroupCount;
+	if (hard) LastGroupCount = Groups.Num();
+	OnGroupChanged.Broadcast(hard);
+}
+
+ALampSubsystem::ALampSubsystem() {
+	if (!Groups.Contains(DefaultLampGroup)) Groups.Add({DefaultLampGroup, AUTO});
+	bReplicates = true;
+}
+
+ALampSubsystem * ALampSubsystem::Get(UWorld* world) {
 	TArray<AActor*> subsystems;
 	UGameplayStatics::GetAllActorsOfClass(world, ALampSubsystem::StaticClass(), subsystems);
 	if (subsystems.Num() > 0) return (ALampSubsystem*) subsystems[0];
-	return world->SpawnActor<ALampSubsystem>();
+	return nullptr;
 }
 
 ALampSubsystem * ALampSubsystem::Get(UObject * worldContext) {
 	return Get(worldContext->GetWorld());
 }
 
-bool ALampSubsystem::setGroup(FString group, ELampMode mode, bool create) {
-	group = group.TrimStartAndEnd();
-	if (group.Len() < 1) return false;
-	if (auto g = groups.Find(group)) {
-		*g = mode;
-		return true;
-	} else if (create) {
-		groups.Add(group, mode);
-		return true;
+void ALampSubsystem::setGroup(const FString& group, ELampMode mode, bool create) {
+	auto rco = Cast<ULampSubsystemRCO>(Cast<AFGPlayerController>(GetWorld()->GetFirstPlayerController())->GetRemoteCallObjectOfClass(ULampSubsystemRCO::StaticClass()));
+	if (rco) {
+		rco->SetGroup(this, group, mode, create);
 	}
-	return false;
 }
 
-ELampMode ALampSubsystem::getGroup(FString group, bool& found) {
-	auto g = groups.Find(group);
+ELampMode ALampSubsystem::getGroup(const FString& group, bool& found) {
+	auto g = Groups.FindByKey(group);
 	found = g != nullptr;
-	if (g) return *g;
-	else return ELampMode::OFF;
+	if (g) {
+		return g->Mode;
+	} else return ELampMode::OFF;
 }
 
-bool ALampSubsystem::removeGroup(FString group) {
-	Log(FString(TEXT("Group: ")) + group);
-	if (group == DefaultLampGroup) return false;
-	return groups.Remove(group) > 0;
+void ALampSubsystem::removeGroup(const FString& group) {
+	auto rco = Cast<ULampSubsystemRCO>(Cast<AFGPlayerController>(GetWorld()->GetFirstPlayerController())->GetRemoteCallObjectOfClass(ULampSubsystemRCO::StaticClass()));
+	if (rco) rco->RemoveGroup(this, group);
 }
 
 void ALampSubsystem::getGroups(TArray<FString>& keys) {
 	TArray<FString> arr;
-	groups.GetKeys(arr);
-	for (int i = 0; i < arr.Num(); i++) {
-		keys.Add(arr[i]);
+	for (auto& group : Groups) {
+		keys.Add(group.Name);
 	}
 }
 
-void ALampSubsystem::Log(FString logStr) {
-	SML::Logging::error(*logStr);
+void ALampSubsystem::GetLifetimeReplicatedProps(TArray< FLifetimeProperty >& OutLifetimeProps) const {
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(ALampSubsystem, Groups);
 }

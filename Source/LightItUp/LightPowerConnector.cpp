@@ -45,7 +45,9 @@ void ULightPowerConnector::registerDistributor(ALightPowerDistributor * distribu
 void ULightPowerConnector::unregisterDistributor() {
 	if (!mDistributor) return;
 	if (mPowerConnection) {
-		mPowerConnection->RemoveHiddenConnection(mDistributor->PowerConnection);
+		TArray<UFGCircuitConnectionComponent*> connections;
+		mPowerConnection->GetHiddenConnections(connections);
+		if (connections.Contains(mDistributor->PowerConnection)) mPowerConnection->RemoveHiddenConnection(mDistributor->PowerConnection);
 		mPowerConnection = nullptr;
 	}
 	auto dist = mDistributor;
