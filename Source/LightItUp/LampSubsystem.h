@@ -5,16 +5,57 @@
 #include "CoreMinimal.h"
 #include "FGSubsystem.h"
 #include "FGSaveInterface.h"
+#include "FGRemoteCallObject.h"
 #include "LampSubsystem.generated.h"
 
 #define DefaultLampGroup TEXT("Default")
 
-UENUM()
+UENUM(BlueprintType)
 enum ELampMode {
 	OFF,
 	ON,
 	AUTO,
 };
+
+class ALampSubsystem;
+
+UCLASS(BlueprintType)
+class LIGHTITUP_API ULampSubsystemRCO : public UFGRemoteCallObject {
+	GENERATED_BODY()
+
+public:
+	ULampSubsystemRCO();
+
+	UPROPERTY(Replicated)
+		int32 Test;
+
+	UFUNCTION(Server, WithValidation, Reliable)
+		void SetGroup(ALampSubsystem* subsys, const FString& group, ELampMode mode, bool create);
+
+	UFUNCTION(Server, WithValidation, Reliable)
+		void RemoveGroup(ALampSubsystem* subsys, const FString& group);
+};
+
+USTRUCT()
+struct FLampGroup {
+	GENERATED_BODY()
+
+	UPROPERTY()
+	FString Name;
+
+	UPROPERTY()
+	TEnumAsByte<ELampMode> Mode;
+
+	bool operator==(const FLampGroup& group) const {
+		return Name == group.Name;
+	}
+
+	bool operator==(const FString& Key) const {
+		return Name == Key;
+	}
+};
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGroupUpdate, bool, Hard);
 
 /**
  * Controlls the Lamps in the world.
@@ -24,17 +65,35 @@ UCLASS()
 class LIGHTITUP_API ALampSubsystem : public AFGSubsystem, public IFGSaveInterface
 {
 	GENERATED_BODY()
-	
+
+	friend ULampSubsystemRCO;
 private:
-	UPROPERTY(SaveGame)
-		TMap<FString, TEnumAsByte<ELampMode>> groups;
+	UPROPERTY(SaveGame, ReplicatedUsing=OnGroupsChanged)
+		TArray<FLampGroup> Groups;
+
+	UPROPERTY()
+		int32 LastGroupCount = -1;
+
+	UFUNCTION()
+		void OnGroupsChanged();
 
 public:
+	UPROPERTY(BlueprintAssignable, Category ="Light")
+		FGroupUpdate OnGroupChanged;
+
+	ALampSubsystem();
+
 	// Begin IFGSaveInterface
 	bool ShouldSave_Implementation() const override;
 	// End IFGSaveInterface
 
-	ALampSubsystem();
+	// Begin UObject
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+	// End UObject
+
+	// Begin AActor
+	virtual void BeginPlay() override;
+	// End AActor
 
 	/** Get the lamp subsystem in the current world, can be nullptr, e.g. on game ending (destroy) or game startup. */
 	static ALampSubsystem* Get(UWorld* world);
@@ -44,17 +103,14 @@ public:
 		static ALampSubsystem* Get(UObject* worldContext);
 
 	UFUNCTION(BlueprintCallable, Category = "Light")
-		bool setGroup(FString group, ELampMode mode, bool create = false);
+		void setGroup(const FString& group, ELampMode mode, bool create = false);
 
 	UFUNCTION(BlueprintCallable, Category = "Light")
-		ELampMode getGroup(FString group, bool& found);
+		ELampMode getGroup(const FString& group, bool& found);
 
 	UFUNCTION(BlueprintCallable, Category = "Light")
-		bool removeGroup(FString group);
+		void removeGroup(const FString& group);
 
 	UFUNCTION(BlueprintCallable, Category = "Light")
 		void getGroups(TArray<FString>& groupNames);
-	
-	UFUNCTION(BlueprintCallable)
-		static void Log(FString logStr);
 };
