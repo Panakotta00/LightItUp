@@ -28,6 +28,7 @@ bool ULampSubsystemRCO::SetGroup_Validate(ALampSubsystem* subsys, const FString&
 }
 
 void ULampSubsystemRCO::RemoveGroup_Implementation(ALampSubsystem* subsys, const FString& groupName) {
+	if (groupName == DefaultLampGroup || groupName.Len() < 1) return;
 	auto group = subsys->Groups.FindByKey(groupName);
 	subsys->Groups.Remove(*group);
 	subsys->ForceNetUpdate();
