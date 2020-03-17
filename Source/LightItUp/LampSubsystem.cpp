@@ -28,6 +28,7 @@ bool ULampSubsystemRCO::SetGroup_Validate(ALampSubsystem* subsys, const FString&
 }
 
 void ULampSubsystemRCO::RemoveGroup_Implementation(ALampSubsystem* subsys, const FString& groupName) {
+	if (groupName == DefaultLampGroup || groupName.Len() < 1) return;
 	auto group = subsys->Groups.FindByKey(groupName);
 	subsys->Groups.Remove(*group);
 	subsys->ForceNetUpdate();
@@ -49,10 +50,6 @@ bool ALampSubsystem::ShouldSave_Implementation() const {
 	return true;
 }
 
-void ALampSubsystem::BeginPlay() {
-	Super::BeginPlay();
-}
-
 void ALampSubsystem::OnGroupsChanged() {
 	bool hard = Groups.Num() != LastGroupCount;
 	if (hard) LastGroupCount = Groups.Num();
@@ -60,8 +57,13 @@ void ALampSubsystem::OnGroupsChanged() {
 }
 
 ALampSubsystem::ALampSubsystem() {
-	if (!Groups.Contains(DefaultLampGroup)) Groups.Add({DefaultLampGroup, AUTO});
 	bReplicates = true;
+}
+
+void ALampSubsystem::BeginPlay() {
+	Super::BeginPlay();
+	if (!Groups.Contains(FString(DefaultLampGroup))) Groups.Add({DefaultLampGroup, AUTO});
+	if (FLampGroup* group = Groups.FindByKey(TEXT(""))) Groups.Remove(*group);
 }
 
 ALampSubsystem * ALampSubsystem::Get(UWorld* world) {
