@@ -61,7 +61,8 @@ void ALampSubsystem::OnGroupsChanged() {
 }
 
 ALampSubsystem::ALampSubsystem() {
-	if (!Groups.Contains(DefaultLampGroup)) Groups.Add({DefaultLampGroup, AUTO});
+	if (!Groups.Contains(FString(DefaultLampGroup))) Groups.Add({DefaultLampGroup, AUTO});
+	if (FLampGroup* group = Groups.FindByKey(TEXT(""))) Groups.Remove(*group);
 	bReplicates = true;
 }
 
