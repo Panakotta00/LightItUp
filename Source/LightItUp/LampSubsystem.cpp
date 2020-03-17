@@ -50,10 +50,6 @@ bool ALampSubsystem::ShouldSave_Implementation() const {
 	return true;
 }
 
-void ALampSubsystem::BeginPlay() {
-	Super::BeginPlay();
-}
-
 void ALampSubsystem::OnGroupsChanged() {
 	bool hard = Groups.Num() != LastGroupCount;
 	if (hard) LastGroupCount = Groups.Num();
@@ -61,9 +57,13 @@ void ALampSubsystem::OnGroupsChanged() {
 }
 
 ALampSubsystem::ALampSubsystem() {
+	bReplicates = true;
+}
+
+void ALampSubsystem::BeginPlay() {
+	Super::BeginPlay();
 	if (!Groups.Contains(FString(DefaultLampGroup))) Groups.Add({DefaultLampGroup, AUTO});
 	if (FLampGroup* group = Groups.FindByKey(TEXT(""))) Groups.Remove(*group);
-	bReplicates = true;
 }
 
 ALampSubsystem * ALampSubsystem::Get(UWorld* world) {
