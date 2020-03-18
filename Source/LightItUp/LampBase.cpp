@@ -84,6 +84,7 @@ void ALampBase::BeginPlay() {
 void ALampBase::TickActor(float DeltaTime, ELevelTick TickType, FActorTickFunction & ThisTickFunction) {
 	if ((bLampOn != (mLastLampOn == 1)) || mLastLampOn == 2) {
 		mLastLampOn = bLampOn ? 1 : 0;
+		if (HasAuthority()) ForceNetUpdate();
 		auto lights = GetComponentsByClass(ULightComponent::StaticClass());
 		for (auto& light : lights) {
 			Cast<USceneComponent>(light)->SetVisibilitySML(bLampOn);
@@ -113,7 +114,6 @@ void ALampBase::Factory_Tick(float dt) {
 		bool hasPower = mPowerInfo->HasPower();
 		if (hasPower != bLampOn) {
 			bLampOn = hasPower;
-			ForceNetUpdate();
 		}
 	}
 }
