@@ -109,3 +109,7 @@ void ALampSubsystem::GetLifetimeReplicatedProps(TArray< FLifetimeProperty >& Out
 
 	DOREPLIFETIME(ALampSubsystem, Groups);
 }
+
+void ULampSubsystemHolder::InitSubsystems() {
+	LampSubsystem = Cast<ALampSubsystem>(K2_SpawnSubsystem(ALampSubsystem::StaticClass(), "LampSubsystem"));
+}

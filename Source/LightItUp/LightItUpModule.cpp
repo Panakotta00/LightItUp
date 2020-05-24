@@ -30,6 +30,8 @@ void FLightItUpModule::StartupModule() {
 	SUBSCRIBE_METHOD("?BeginPlay@AFGPlayerController@@UEAAXXZ", AFGPlayerController::BeginPlay, &PlayerBeginPlay)
 	SUBSCRIBE_METHOD("?Init@AFGGameState@@UEAAXXZ", AFGGameState::Init, &GameStateInit)
 	SUBSCRIBE_METHOD("?PostLogin@AFGGameMode@@UEAAXPEAVAPlayerController@@@Z", AFGGameMode::PostLogin, &GameModePostLogin)
+
+	FSubsystemInfoHolder::RegisterSubsystemHolder(ULampSubsystemHolder::StaticClass());
 }
 
 IMPLEMENT_GAME_MODULE(FLightItUpModule, LightItUp);

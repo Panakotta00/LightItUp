@@ -6,6 +6,8 @@
 #include "FGSubsystem.h"
 #include "FGSaveInterface.h"
 #include "FGRemoteCallObject.h"
+#include "mod/ModSubsystems.h"
+
 #include "LampSubsystem.generated.h"
 
 #define DefaultLampGroup TEXT("Default")
@@ -113,4 +115,16 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Light")
 		void getGroups(TArray<FString>& groupNames);
+};
+
+UCLASS()
+class ULampSubsystemHolder : public UModSubsystemHolder {
+	GENERATED_BODY()
+
+private:
+	UPROPERTY()
+	ALampSubsystem* LampSubsystem = nullptr;
+	
+public:
+	virtual void InitSubsystems() override;
 };
