@@ -34,6 +34,12 @@ public:
 
 	UFUNCTION(Server, WithValidation, Reliable)
 		void RemoveGroup(ALampSubsystem* subsys, const FString& group);
+
+	UFUNCTION(BlueprintCallable, Server, WithValidation, Reliable, Category="Light")
+        void PickupPortableLamp(AActor* portableLamp, AFGPlayerController* Player);
+
+	UFUNCTION(BlueprintCallable, Server, WithValidation, Reliable, Category="Light")
+        void PlacePortableLamp(AFGPlayerController* Player);
 };
 
 USTRUCT()

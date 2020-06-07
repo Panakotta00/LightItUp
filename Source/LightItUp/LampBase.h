@@ -43,6 +43,7 @@ private:
 
 	UPROPERTY()
 		uint8 mLastLampOn = 2;
+	bool bLastShouldBeOn = false;
 
 	bool shouldLampBeOn(ELampMode mode);
 	
