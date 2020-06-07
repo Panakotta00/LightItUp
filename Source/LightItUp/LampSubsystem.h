@@ -40,10 +40,10 @@ USTRUCT()
 struct FLampGroup {
 	GENERATED_BODY()
 
-	UPROPERTY()
+	UPROPERTY(SaveGame)
 	FString Name;
 
-	UPROPERTY()
+	UPROPERTY(SaveGame)
 	TEnumAsByte<ELampMode> Mode;
 
 	bool operator==(const FLampGroup& group) const {
