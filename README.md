@@ -3,9 +3,10 @@
 
 ## Contributors
 - Panakotta00
-- PortalGamesMais
-- Trxnce
 - RosszEmber
+- Deantendo
+- Trxnce
+- PortalGamesMais
 
 ## Lamptypes
 - Lamp Pole: A High lamp to light up big areas, consumes power

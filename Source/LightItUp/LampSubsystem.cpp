@@ -1,13 +1,66 @@
 #include "LampSubsystem.h"
+
+#include "FGDismantleInterface.h"
 #include "Engine/World.h"
 #include "Kismet/GameplayStatics.h"
 #include "util/Logging.h"
 #include "FGPlayerController.h"
 #include "FGGameMode.h"
+#include "FGInventoryLibrary.h"
+#include "FGItemPickup_Spawnable.h"
 #include "UnrealNetwork.h"
+#include "FGInventoryComponentEquipment.h"
+#include "Kismet/KismetMathLibrary.h"
 
 ULampSubsystemRCO::ULampSubsystemRCO() {
 	
+}
+
+#pragma optimize("", off)
+void ULampSubsystemRCO::PlacePortableLamp_Implementation(AFGPlayerController* Player) {
+	static UClass* portableLampClass = nullptr;
+	if (!portableLampClass) portableLampClass = LoadObject<UClass>(NULL, TEXT("/Game/LightItUp/Lamps/PortableLight/PortableLamp.PortableLamp_C"));
+	static UClass* portableLampEDClass = nullptr;
+	if (!portableLampEDClass) portableLampEDClass = LoadObject<UClass>(NULL, TEXT("/Game/LightItUp/Lamps/PortableLight/ED_PortableLamp.ED_PortableLamp_C"));
+
+	AFGCharacterPlayer* Char = Cast<AFGCharacterPlayer>(Player->GetCharacter());
+	FVector startDir = UKismetMathLibrary::GetForwardVector(Char->GetActorRotation());
+	startDir = startDir * FVector(200,200,0);
+	FVector start = Char->GetActorTransform().GetLocation() + startDir + FVector(0,0,100);
+	FVector end = start - FVector(0,0,400);
+	FHitResult hit;
+	if (Player->GetWorld()->LineTraceSingleByChannel(hit, start, end, ECC_GameTraceChannel6)) {
+		FActorSpawnParameters params;
+		params.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+		AActor* lamp = Player->GetWorld()->SpawnActor<AActor>(portableLampClass, hit.Location, Char->GetActorRotation(), params);
+		if (IsValid(lamp)) {
+			UFGInventoryComponentEquipment* inv = Char->GetEquipmentSlot(EEquipmentSlot::ES_ARMS);
+			inv->Remove(portableLampEDClass, 1);
+		}
+	}
+}
+#pragma optimize("", on)
+
+bool ULampSubsystemRCO::PlacePortableLamp_Validate(AFGPlayerController* Player) {
+	return true;
+}
+
+void ULampSubsystemRCO::PickupPortableLamp_Implementation(AActor* portableLamp, AFGPlayerController* Player) {
+	TArray<FInventoryStack> stacks;
+	IFGDismantleInterface::Execute_GetDismantleRefund(portableLamp, stacks);
+	UFGInventoryComponent* inv = Cast<AFGCharacterPlayer>(Player->GetPawn())->GetInventory();
+	if (inv->HasEnoughSpaceForStacks(stacks)) inv->AddStacks(stacks);
+	else {
+		float radius;
+		FVector pos = IFGDismantleInterface::Execute_GetRefundSpawnLocationAndArea(portableLamp, Player->GetPawn()->GetActorLocation(), radius);
+		TArray<class AFGItemPickup_Spawnable*> drops;
+		AFGItemPickup_Spawnable::CreateItemDropsInCylinder(portableLamp->GetWorld(), stacks, pos, radius, {portableLamp}, drops);
+	}
+	portableLamp->Destroy();
+}
+
+bool ULampSubsystemRCO::PickupPortableLamp_Validate(AActor* portableLamp, AFGPlayerController* Player) {
+	return true;
 }
 
 void ULampSubsystemRCO::SetGroup_Implementation(ALampSubsystem* subsys, const FString& group, ELampMode mode, bool create) {

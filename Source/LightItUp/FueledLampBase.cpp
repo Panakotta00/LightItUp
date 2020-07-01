@@ -5,10 +5,10 @@
 
 AFueledLampBase::AFueledLampBase() {
 	PowerConnectionProduction = CreateDefaultSubobject<UFGPowerConnectionComponent>("PowerConnectionProduction");
-	PowerConnectionProduction->SetIsHidden(true);
+	PowerConnectionProduction->SetupAttachment(RootComponent);
 
 	PowerConnectionConsumption = CreateDefaultSubobject<UFGPowerConnectionComponent>("PowerConnectionConsumption");
-	PowerConnectionConsumption->SetIsHidden(true);
+	PowerConnectionConsumption->SetupAttachment(RootComponent);
 }
 
 void AFueledLampBase::BeginPlay() {

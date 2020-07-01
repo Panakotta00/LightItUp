@@ -110,11 +110,11 @@ void ALampBase::Factory_Tick(float dt) {
 			}
 		}
 		auto shouldBeOn = shouldLampBeOn(mode);
-		mPowerInfo->SetTargetConsumption(shouldBeOn ? mPowerConsumption : 0.0f);
-		bool hasPower = mPowerInfo->HasPower();
-		if (hasPower != bLampOn) {
-			bLampOn = hasPower;
-		}
+		if (bLastShouldBeOn != shouldBeOn) mPowerInfo->SetTargetConsumption(shouldBeOn ? mPowerConsumption : 0.0f);
+		bLastShouldBeOn = shouldBeOn;
+		if (shouldBeOn) {
+			bLampOn = mPowerInfo->HasPower();
+		} else bLampOn = false;
 	}
 }
 
