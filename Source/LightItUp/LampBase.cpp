@@ -143,6 +143,46 @@ void ALampBase::SetUseGroup(bool useGroup) {
 	}
 }
 
+void ALampBase::netFunc_setMode(int mode) {
+	mMode =  static_cast<ELampMode>(mode);
+	ForceNetUpdate();
+}
+
+int ALampBase::netFunc_getMode() {
+	return mMode;
+}
+
+void ALampBase::netFunc_setGroup(const FString& group) {
+	mGroup = group;
+	ForceNetUpdate();
+}
+
+FString ALampBase::netFunc_getGroup() {
+	return mGroup;
+}
+
+void ALampBase::netFunc_setUseGroup(bool useGroup) {
+	mUseGroup = useGroup;
+	ForceNetUpdate();
+}
+
+bool ALampBase::netFunc_getUseGroup() {
+	return mUseGroup;
+}
+
+void ALampBase::netFunc_setGroupMode(const FString& group, int mode, bool create) {
+	lampSubSys->setGroup(group, static_cast<ELampMode>(mode), create);
+}
+
+int ALampBase::netFunc_getGroupMode(const FString& group) {
+	bool worked;
+	return lampSubSys->getGroup(group, worked);
+}
+
+void ALampBase::netFunc_removeGroup(const FString& group) {
+	lampSubSys->removeGroup(group);
+}
+
 void ALampBase::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 

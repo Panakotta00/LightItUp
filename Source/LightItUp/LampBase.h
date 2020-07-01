@@ -92,11 +92,40 @@ public:
 	// End IFGSaveInterface
 
 	UFUNCTION(BlueprintCallable, Category = "Lamps")
-		void SetGroup(const FString& group);
+	void SetGroup(const FString& group);
 
 	UFUNCTION(BlueprintCallable, Category = "Lamps")
-		void SetMode(TEnumAsByte<ELampMode> mode);
+	void SetMode(TEnumAsByte<ELampMode> mode);
 
 	UFUNCTION(BlueprintCallable, Category = "Lamps")
-		void SetUseGroup(bool useGroup);
+	void SetUseGroup(bool useGroup);
+
+	// Begin FicsIt-Networks support
+	UFUNCTION()
+	void netFunc_setMode(int mode);
+
+	UFUNCTION()
+	int netFunc_getMode();
+
+	UFUNCTION()
+	void netFunc_setGroup(const FString& group);
+
+	UFUNCTION()
+	FString netFunc_getGroup();
+
+	UFUNCTION()
+	void netFunc_setUseGroup(bool useGroup);
+
+	UFUNCTION()
+	bool netFunc_getUseGroup();
+
+	UFUNCTION()
+	void netFunc_setGroupMode(const FString& group, int mode, bool create);
+
+	UFUNCTION()
+	int netFunc_getGroupMode(const FString& group);
+
+	UFUNCTION()
+	void netFunc_removeGroup(const FString& group);
+	// End FicsIt-Networks support
 };
