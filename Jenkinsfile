@@ -53,7 +53,7 @@ pipeline {
         
         stage('Setup SML') {
             steps {
-                bat label: '', script: 'git clone --branch ${SML_BRANCH} https://github.com/satisfactorymodding/SatisfactoryModLoader.git'
+                bat label: '', script: 'git clone --branch %SML_BRANCH% https://github.com/satisfactorymodding/SatisfactoryModLoader.git'
                 bat label: '', script: 'xcopy /Y /E /I SatisfactoryModLoader\\Source\\FactoryGame LightItUp\\Source\\FactoryGame > copy.log'
                 bat label: '', script: 'xcopy /Y /E /I SatisfactoryModLoader\\Source\\SML LightItUp\\Source\\SML > copy.log'
                 bat label: '', script: 'xcopy /Y /E /I SatisfactoryModLoader\\Plugins\\Alpakit LightItUp\\Plugins\\Alpakit > copy.log'
