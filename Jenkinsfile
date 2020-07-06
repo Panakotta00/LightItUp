@@ -9,7 +9,7 @@ pipeline {
     }
 
 	environment {
-        SML_BRANCH = 'sml-2.1.3'
+        SML_BRANCH = 'master'
     }
 
     stages {
@@ -90,18 +90,18 @@ pipeline {
             }
         }
 
-        stage('Package FicsIt-Networks') {
+        stage('Package LightItUp') {
             when {
                 not {
                     changeRequest()
                 }
             }
             steps {
-                dir('FicsIt-Networks') {
+                dir('LightItUp') {
                     bat label: '', script: "7z a -tzip -mx9 -mm=LZMA -xr!*.pdb ..\\LightItUp-${BRANCH_NAME}-${BUILD_NUMBER}-Win64.zip Binaries\\ Config\\ Content\\ Library\\ Plugins\\Alpakit\\ Source\\ .gitattributes .gitignore FactoryGame.uproject LICENSE README.md ..\\ToPak"
                     bat label: '', script: 'copy .\\Binaries\\Win64\\UE4-LightItUp-Win64-Shipping.* .\\'
                     bat label: '', script: 'copy ..\\ToPak\\LightItUp.pak .\\'
-                    bat label: '', script: "7z a -tzip -mx9 FicsIt-Networks.smod .\\data.json .\\LightItUp.bmp .\\UE4-LightItUp-Win64-Shipping.dll .\\UE4-LightItUp-Win64-Shipping.pdb .\\LightItUp.pak"
+                    bat label: '', script: "7z a -tzip -mx9 LightItUp.smod .\\data.json .\\LightItUp.bmp .\\UE4-LightItUp-Win64-Shipping.dll .\\UE4-LightItUp-Win64-Shipping.pdb .\\LightItUp.pak"
                 }
                 bat label: '', script: '7z x %EXTRACT_AND_GO% -o.\\'
                 bat label: '', script: 'copy .\\LightItUp\\Binaries\\Win64\\UE4-SML-Win64-Shipping.* .\\ExtractAndGo\\loaders\\'
