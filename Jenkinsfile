@@ -57,6 +57,8 @@ pipeline {
                 bat label: '', script: 'xcopy /Y /E /I SatisfactoryModLoader\\Source\\FactoryGame LightItUp\\Source\\FactoryGame > copy.log'
                 bat label: '', script: 'xcopy /Y /E /I SatisfactoryModLoader\\Source\\SML LightItUp\\Source\\SML > copy.log'
                 bat label: '', script: 'xcopy /Y /E /I SatisfactoryModLoader\\Plugins\\Alpakit LightItUp\\Plugins\\Alpakit > copy.log'
+				bat label: '', script: 'dir LightItUp\\Plugins'
+				bat label: '', script: 'dir LightItUp\\Plugins\\Alpakit'
                 bat label: '', script: 'xcopy /Y /E /I SatisfactoryModLoader\\Content\\SML LightItUp\\Content\\SML > copy.log'
             }
         }
