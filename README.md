@@ -1,4 +1,4 @@
-# LightItUp
+# LightItUp [![Build Status](https://jenkins.massivebytes.net/job/LightItUp/job/development/badge/icon)](https://jenkins.massivebytes.net/job/LightItUp/job/development)
 "Light It Up" is a Satisfactory Mod which adds a couple of Lamps to the game.
 
 ## Contributors
