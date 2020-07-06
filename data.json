@@ -19,5 +19,7 @@
 		"type": "sml_mod"
 	  }
 	],
-	"dependencies": {}
+	"dependencies": {
+		"SML": "^2.2.0"
+	}
   }
