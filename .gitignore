@@ -77,4 +77,8 @@ Mods/*
 # Satisfactory Mod Loader + Game Headers + Alpakit
 Source/SML
 Source/FactoryGame
-Source/Alpakit
+Plugins/Alpakit
+
+# Rider
+.idea
+Plugins/Developer/RiderLink
