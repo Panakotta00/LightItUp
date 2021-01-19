@@ -6,7 +6,7 @@
 #include "FGSubsystem.h"
 #include "FGSaveInterface.h"
 #include "FGRemoteCallObject.h"
-#include "mod/ModSubsystems.h"
+#include "ModSubsystemHolder.h"
 
 #include "LampSubsystem.generated.h"
 

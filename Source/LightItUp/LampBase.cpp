@@ -1,7 +1,6 @@
 #include "LampBase.h"
 
 #include "FGTimeSubsystem.h"
-#include "util/Logging.h"
 #include "UnrealNetwork.h"
 #include "FGPlayerController.h"
 #include "Components/SceneComponent.h"
