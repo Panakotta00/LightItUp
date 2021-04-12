@@ -1,6 +1,10 @@
 # LightItUp [![Build Status](https://jenkins.massivebytes.net/job/LightItUp/job/development/badge/icon)](https://jenkins.massivebytes.net/job/LightItUp/job/development)
 "Light It Up" is a Satisfactory Mod which adds a couple of Lamps to the game.
 
+# !!! Discontinued !!!
+Due to Update 4 of Satisfactory which adds better lights to the base game, this mod is not necessery anymore.
+Meaning, the mod will not be maintained anymore.
+
 ## Contributors
 - Panakotta00
 - RosszEmber
